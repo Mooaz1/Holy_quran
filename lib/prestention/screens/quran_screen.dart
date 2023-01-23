@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:holy_quran/logic/cubit/quran_cubit.dart';
 import 'package:holy_quran/prestention/screens/azkar_screen.dart';
 import 'package:holy_quran/prestention/screens/reading_screens/quran_reading_page.dart';
+import 'package:holy_quran/prestention/screens/settings_screen.dart';
 import 'package:holy_quran/prestention/widgets/home_widgets/defult_last_read_widget.dart';
 import 'package:holy_quran/prestention/widgets/home_widgets/defult_quran_list_tile_widget.dart';
 
@@ -27,24 +28,20 @@ class _QuranScreenState extends State<QuranScreen>
         return (QuranCubit.get(context).surahlist.length > 0)
             ? Scaffold(
                 appBar: AppBar(
-                  backgroundColor: const Color.fromARGB(255, 242, 235, 243),
+                  
                   elevation: 0,
                   title: const Text(
                     "Holy Quran",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'Aldhabi',
-                      fontStyle: FontStyle.italic,
-                      fontSize: 36,
-                    ),
+                   
                   ),
                   centerTitle: true,
                   actions: [
-                    IconButton(onPressed: (){}, icon:const Icon(Icons.dark_mode_outlined)),
-                    IconButton(onPressed: (){}, icon:const Icon(Icons.font_download_sharp))
+                    IconButton(onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: ((context) => SetteingsScreen())));
+                    }, icon:const Icon(Icons.settings)),
                   ],
                 ),
-                backgroundColor: const Color.fromARGB(255, 242, 235, 243),
+               
                 body: Column(
                   children: [
                     DefultLastRead(
@@ -133,7 +130,9 @@ class _QuranScreenState extends State<QuranScreen>
                 ))
             : const Scaffold(
                 body: Center(
-                  child: CircularProgressIndicator(),
+                  child: CircularProgressIndicator(
+                    color: Colors.purple,
+                  ),
                 ),
               );
       },

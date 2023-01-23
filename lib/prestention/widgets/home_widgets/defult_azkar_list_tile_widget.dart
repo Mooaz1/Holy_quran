@@ -54,7 +54,7 @@ class DefultAzkarListTile extends StatelessWidget {
               ],
             )
           : null,
-      title: Center(child: Text(name.toString())),
+      title: Center(child: Text(name.toString(),style: TextStyle(color: QuranCubit.get(context).isDark?Colors.white:Colors.black),)),
       subtitle: englishName != null ? Text(englishName.toString()) : null,
     );
   }

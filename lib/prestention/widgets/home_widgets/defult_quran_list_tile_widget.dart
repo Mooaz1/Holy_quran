@@ -37,7 +37,7 @@ class DefultQuranListTile extends StatelessWidget {
       trailing: numberOfAyahs!=null? Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Text("عدد الايات"),
+           Text("عدد الايات",style: TextStyle(color: QuranCubit.get(context).isDark?Colors.white:Colors.black),),
           CircleAvatar(
             backgroundColor: Colors.purple,
             radius: 16,
@@ -46,10 +46,10 @@ class DefultQuranListTile extends StatelessWidget {
           ),
         ],
       ):null,
-      title: Center(child: Text( name.toString(),style:const TextStyle(
+      title: Center(child: Text( name.toString(),style: TextStyle(
                 fontFamily: 'Aldhabi',
                 fontSize: 30,
-                color: Colors.black87,
+                color:QuranCubit.get(context).isDark?Colors.white:Colors.black,
                 fontWeight: FontWeight.bold,
               ),)),
       subtitle:

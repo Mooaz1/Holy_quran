@@ -18,20 +18,15 @@ class AzkarScreen extends StatelessWidget {
       builder: (context, state) {
         return QuranCubit.get(context).azkar.length>0? Scaffold(
            appBar: AppBar(
-                  backgroundColor: const Color.fromARGB(255, 242, 235, 243),
+                 
                   elevation: 0,
                   title: const Text(
                     "Holy Quran",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'Aldhabi',
-                      fontStyle: FontStyle.italic,
-                      fontSize: 36,
-                    ),
+                   
                   ),
                   centerTitle: true,
                 ),
-              backgroundColor: const Color.fromARGB(255, 242, 235, 243),
+             
                 body: Column(
                   children: [
                     DefultLastRead(heigt: heigt,

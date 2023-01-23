@@ -60,5 +60,16 @@ class QuranCubit extends Cubit<QuranState> {
     emit(AzkarLoadedState());
     return azkar;
   }
+  double fontSize=20;
+  void changeFontSize(double size){
+    fontSize= size;
+    emit(ChangeFontSize());
+
+  }
+  bool isDark=false;
+  void changeAppTheme(){
+    isDark=!isDark;
+    emit(ChangeAppTheme());
+  }
 
 }

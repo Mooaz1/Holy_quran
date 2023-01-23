@@ -30,23 +30,16 @@ class _AzkarReadingpageState extends State<AzkarReadingpage> {
       },
       builder: (context, state) {
         return Scaffold(
-          backgroundColor: const Color.fromARGB(255, 242, 235, 243),
         appBar: PreferredSize(
           preferredSize:Size.fromHeight(100),
           child: AppBar(
-            backgroundColor: const Color.fromARGB(255, 242, 235, 243),
             elevation: 0,
             centerTitle: true,
             title: Padding(
               padding: const EdgeInsets.only(top: 30),
               child: Text(
               QuranCubit.get(context).azkar[widget.index].category.toString(),
-              style:const TextStyle(
-                fontFamily: 'Aldhabi',
-                fontSize: 25,
-                color: Colors.black87,
-                fontWeight: FontWeight.bold,
-              ),
+              
           ),
             ),
           ),
@@ -92,11 +85,12 @@ class _AzkarReadingpageState extends State<AzkarReadingpage> {
                                       style: TextStyle(
                                         fontFamily: 'Kitab',
                                         fontSize: 20,
-                                        color: Colors.black87,
+                                        color: QuranCubit.get(context).isDark?Colors.white:Colors.black,
                                       ),
                                     ),
                                   ),
                                   CircleAvatar(
+                                    backgroundColor: Colors.purple,
                                     child: Text(widget.zekr![index].id.toString()),
                                   ),
                                 ],

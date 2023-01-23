@@ -5,6 +5,7 @@ import 'package:holy_quran/data/web_services/web_services.dart';
 import 'package:holy_quran/logic/bloc_observer/observer.dart';
 import 'package:holy_quran/logic/cubit/quran_cubit.dart';
 import 'package:holy_quran/prestention/screens/quran_screen.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
@@ -15,7 +16,10 @@ void main() async {
 
   runApp(
     BlocProvider(
-      create: (context) => quranCubit..allSurah()..getAllAyah()..getAllAzkar(),
+      create: (context) => quranCubit
+        ..allSurah()
+        ..getAllAyah()
+        ..getAllAzkar(),
       child: BlocConsumer<QuranCubit, QuranState>(
         listener: (context, state) {
           // TODO: implement listener
@@ -23,14 +27,40 @@ void main() async {
         builder: (context, state) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            theme: ThemeData(  
-              appBarTheme:const AppBarTheme(
-                iconTheme: IconThemeData(  
-                  color: Colors.black87
-                )
-              )
-              
-            ),
+            theme: ThemeData(
+                appBarTheme: const AppBarTheme(
+                    backgroundColor: const Color.fromARGB(255, 242, 235, 243),
+                    titleTextStyle: TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'Aldhabi',
+                      fontStyle: FontStyle.italic,
+                      fontSize: 36,
+                    ),
+                    iconTheme: IconThemeData(
+                      //Color.fromARGB(255, 242, 235, 243),
+                      color: Colors.purple,
+                    )),
+                    scaffoldBackgroundColor:  const Color.fromARGB(255, 242, 235, 243),
+                    
+                    
+                    
+                    ),
+            darkTheme: ThemeData(
+                appBarTheme: const AppBarTheme(
+                    backgroundColor: Colors.black,
+                    titleTextStyle: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Aldhabi',
+                      fontStyle: FontStyle.italic,
+                      fontSize: 36,
+                    ),
+                    iconTheme: IconThemeData(
+                      //Color.fromARGB(255, 242, 235, 243),
+                      color: Colors.purple,
+                    )),
+                    scaffoldBackgroundColor: Colors.black
+                    ),
+            themeMode: QuranCubit.get(context).isDark?ThemeMode.dark:ThemeMode.light,
             home: QuranScreen(),
           );
         },

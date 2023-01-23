@@ -25,4 +25,7 @@ class ChangeAzkarNumber extends QuranState{}
 
 class AzkarLoadedState extends QuranState{}
 class SharedPreferencesState extends QuranState{}
+class ChangeFontSize extends QuranState{}
+class ChangeAppTheme extends QuranState{}
+
 

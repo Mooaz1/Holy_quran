@@ -48,13 +48,13 @@ class DefultLastRead extends StatelessWidget {
               
              
              Text("$optionaltext",
-              style: TextStyle(color: Colors.black,fontSize:
+              style: TextStyle(color:QuranCubit.get(context).isDark?Colors.white:Colors.black,fontSize:
               title!=null? 
                25:35,
                ),),
               
                Text(title==null?"":   "$title",
-              style: TextStyle(color: Colors.black,fontSize: 25),)
+              style: TextStyle(color:QuranCubit.get(context).isDark?Colors.white:Colors.black,fontSize: 25),)
               ],
              )
             ],
